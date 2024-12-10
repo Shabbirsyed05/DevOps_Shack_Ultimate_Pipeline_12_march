@@ -80,3 +80,18 @@ Then, you can run the script using:
 ```bash
 ./install_docker.sh
 ```
+
+Jenkins Plugins :
+jdk -> Eclipse Termurin installer 
+maven -> config file provider , pipeline maven Integration
+Sonarqube scanner
+docker -> docker , docker pipeline 
+kubernetes -> kubernetes , kubernetes CLI , kubernetes credentials , kubernetes client API
+
+Manage jenkins -> Tools =>
+jdk -> jdk11 (name)-> install from adoptium ,jdk 17.09 
+sonarqube-scanner -> sonar-scanner (name)
+maven -> maven3 (name) -> version : 3.61
+docker -> docker (name) -> docker.com (latest)
+
+
