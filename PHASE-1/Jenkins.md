@@ -83,6 +83,10 @@ Then, you can run the script using:
 
 ```
 Install trivy
+generate toke for git and sonarqube
+add git cred and sonar credentials in jenkins credentials
+manage jenkins -> system =>
+sonarqube server -> sonar(name) , server url -> https://ip_address_public:9000, auth -> sonar-token from drop-down
 ```
 ```
 Jenkins Plugins :
