@@ -81,9 +81,10 @@ Then, you can run the script using:
 ./install_docker.sh
 ```
 
+```
 Jenkins Plugins :
 jdk -> Eclipse Termurin installer 
-maven -> config file provider , pipeline maven Integration
+maven -> config file provider , pipeline maven Integration , maven integration
 Sonarqube scanner
 docker -> docker , docker pipeline 
 kubernetes -> kubernetes , kubernetes CLI , kubernetes credentials , kubernetes client API
@@ -94,4 +95,4 @@ sonarqube-scanner -> sonar-scanner (name)
 maven -> maven3 (name) -> version : 3.61
 docker -> docker (name) -> docker.com (latest)
 
-
+```
