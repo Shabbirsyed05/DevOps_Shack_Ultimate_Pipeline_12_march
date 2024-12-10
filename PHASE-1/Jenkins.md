@@ -82,6 +82,9 @@ Then, you can run the script using:
 ```
 
 ```
+Install trivy
+```
+```
 Jenkins Plugins :
 jdk -> Eclipse Termurin installer 
 maven -> config file provider , pipeline maven Integration , maven integration
