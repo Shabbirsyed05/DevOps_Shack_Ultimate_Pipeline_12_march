@@ -84,6 +84,30 @@ for getting access for other users
 ```
 sudo chmod 666 /var/run/docker.sock
 ```
+#### Plugins :
+```
+Jenkins Plugins :
+jdk -> Eclipse Termurin installer 
+maven -> config file provider , pipeline maven Integration , maven integration
+Sonarqube scanner
+docker -> docker , docker pipeline 
+kubernetes -> kubernetes , kubernetes CLI , kubernetes credentials , kubernetes client API
+
+Manage jenkins -> Tools =>
+jdk -> jdk11 (name)-> install from adoptium ,jdk 17.09 
+sonarqube-scanner -> sonar-scanner (name)
+maven -> maven3 (name) -> version : 3.61
+docker -> docker (name) -> docker.com (latest)
+
+```
+
+```
+Jenkins GUI -> Manage Jenkins -> Tools =>
+JDK name (jdk17) , Install automatically (add from adoptium ) -> jdk-17.0.9+9
+SonarQube Scanner -> name (sonar-scanner), install automatically (lastest)
+maven -> maven3(name), version (3.6.1)
+docker -> docker (name), install automatically (download from docker.com)
+```
 for installing trivy
 ```
 sudo apt-get install wget apt-transport-https gnupg lsb-release
