@@ -80,7 +80,10 @@ Then, you can run the script using:
 ```bash
 ./install_docker.sh
 ```
-
+for getting access for other users
+```
+sudo chmod 666 /var/run/docker.sock
+```
 ```
 Install trivy
 generate toke for git and sonarqube
