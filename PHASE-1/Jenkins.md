@@ -93,11 +93,22 @@ sudo apt-get update
 sudo apt-get install trivy -y
 ```
 ```
+trivy --version
+sonarqube =>  adminsitrator -> security -> users -> generate token
+```
+```
 Install trivy
 generate toke for git and sonarqube
 add git cred and sonar credentials in jenkins credentials
 manage jenkins -> system =>
 sonarqube server -> sonar(name) , server url -> https://ip_address_public:9000, auth -> sonar-token from drop-down
+```
+```
+sonarqube => Administrator -> configuration -> webhooks -> create ->
+name :jenkins , url : http://jenkins_ip:8080/sonarqube-webhook/
+```
+```
+Nexus => maven-releases and maven-snapshots  -> copy and paste in pom.xml file
 ```
 ```
 Jenkins Plugins :
