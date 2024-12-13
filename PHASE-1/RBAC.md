@@ -1,3 +1,5 @@
+on master server:
+
 vi svc.yaml
 ```
 apiVersion: v1
@@ -91,10 +93,11 @@ kubectl describe secret mysecretname -n webapps (copy token and paste in jenkins
 ```
 cd ~/.kube
 ls
-cat config
+cat config (copy the server and update in 'Deploy To Kubernetes' stage => serverUrl: 'https://172.31.41.133:6443)
 ```
 
-kubectl
+
+on jenkins server : 
 
 vi k.sh
 ```
@@ -108,3 +111,13 @@ kubectl version --short --client
 sudo chmod +x k.sh
 ./k.sh
 ```
+
+google account -> app password -> app name (jenkins) -> generate password
+jenkins GUI -> manage jenkins -> system  ->  SMTP server (smtp.gmail.com) , port (465) , use ssl(tick) , 
+add -> jenkins , username (shabbirsyed0786@gmail.com , password (generated one))
+
+jenkins GUI -> manage jenkins -> system  -> E-mail Notification -> SMTP server (smtp.gmail.com) , uss ssl (tick) , port (465),
+Use SMTP Authentication -> shabbirsyed0786@gmail.com (name), password generated one , Test configuration by sending test e-mail
+
+
+
