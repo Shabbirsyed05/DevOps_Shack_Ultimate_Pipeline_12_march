@@ -111,7 +111,7 @@ kubectl version --short --client
 sudo chmod +x k.sh
 ./k.sh
 ```
-
+```
 google account -> app password -> app name (jenkins) -> generate password
 jenkins GUI -> manage jenkins -> system  ->  SMTP server (smtp.gmail.com) , port (465) , use ssl(tick) , 
 add -> jenkins , username (shabbirsyed0786@gmail.com , password (generated one))
@@ -119,5 +119,85 @@ add -> jenkins , username (shabbirsyed0786@gmail.com , password (generated one))
 jenkins GUI -> manage jenkins -> system  -> E-mail Notification -> SMTP server (smtp.gmail.com) , uss ssl (tick) , port (465),
 Use SMTP Authentication -> shabbirsyed0786@gmail.com (name), password generated one , Test configuration by sending test e-mail
 
+```
 
+## before doing build . in nexus -> maven-releases -> delete the folder and run the build or else it will be failing.
+```
+copy the slave-ip_address:port (u can get the port from the console output in the ending)
 
+bugs , bunny (username and password)
+for normal user -> u can addd but cant edit and delete
+
+manager role:
+daffy , duck
+```
+Monitor server :
+````
+monitor ec2:
+size : t2.large , size: 20
+
+sudo apt update
+(https://prometheus.io/download/)
+copy amd64 -> wget link
+tar -xvf filename
+rm -rf tar
+cd promethus_file
+./prometheus &
+
+copy monitor_ip_address:9090
+
+install grafana (search)
+https://grafana.com/grafana/download
+
+copy monitor_ip_address:3000 (for grafana) admin,admin
+
+search blackbox in (https://prometheus.io/download/)
+wget link
+tar -xvf blackbox_filename
+ls
+cd blackbox_file
+ls
+./blackbox_ &
+
+copy monitor_ip_address:9115
+
+cd ..
+cd prometheus
+ls
+vi prometheus.yml
+
+https://github.com/prometheus/blackbox_exporter
+
+vi prometheus.yml (need to add below code -> below static_config -> targets, change ip-addresss in replacement , change "13.201.94.63:30528 " with previously opened application ip i.e slave_ip_address:port_in_jenkins_console)
+```
+```
+- job_name: 'blackbox'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]  # Look for a HTTP 200 response.
+    static_configs:
+      - targets:
+        - https://prometheus.io   # Target to probe with https.
+        - http://13.201.94.63:30528 # Target to probe with http on port 8080.
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 3.108.67.147:9115  # The blackbox exporter's real hostname:port.
+
+```
+
+```
+pgrep prometheus
+kill pid_number
+./prometheus &
+
+prometheus webconsole -> status -> targets
+http://3.108.67.147:9090/targets (u can see they will come up)
+
+Grafana GUI -> Connections ->  Data sources -> Add data source -> prometheus ->  add promethues url  -> save & test
+Grafana GUI -> + icon -> import dashboard ->
+blackbox grafana dashboard -> copy ip to clipboard  , datasource as promethueus
+```
