@@ -200,4 +200,40 @@ http://3.108.67.147:9090/targets (u can see they will come up)
 Grafana GUI -> Connections ->  Data sources -> Add data source -> prometheus ->  add promethues url  -> save & test
 Grafana GUI -> + icon -> import dashboard ->
 blackbox grafana dashboard -> copy ip to clipboard  , datasource as promethueus
+
+jenkins -> plugins -> prometheus metrics and restart jenkins.
 ```
+jenkins server
+```
+search -> node_exporter from https://prometheus.io/download/
+wget link
+tar -xvf node
+cd node_
+./node_explorer &
+
+copy jenkins_ip_address:9100
+
+Jenkins GUI
+Dashboard -> Manage Jenkins ->System -> find prometheus (if u want any changes)
+
+```
+vi prometheus.yml (below targets:[localhost:9000])
+```
+- job_name: 'node_exporter'
+  static_configs:
+  - targets: ['jenkins_ip_address:9100']
+- job_name: 'jenkins'
+  metrics_path: '/prometheus'
+  static_configs:
+  - targets: ['jenkins_ip_address:Jenkins_port']
+```
+pgrep prometheus
+kill pid
+./prometheus &
+
+refresh prometheus webpage
+
+node exporter grafana -> 1860
+
+grafana -> dashboard -> new -> import 
+ 
