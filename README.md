@@ -21,3 +21,5 @@ Phase 4 :
 Monitoring appli -> system level (cpu, ram)
 		     website level (traffic)
 ```
+NA900854-SAL		Sentinel Agent setup wizard ended prematurely
+
