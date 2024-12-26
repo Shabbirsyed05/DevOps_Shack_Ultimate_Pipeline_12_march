@@ -1,6 +1,6 @@
 phase 1 :
 ```
-NWE -> privat , isolated , secure
+NWE -> private , isolated , secure
 k8s -> Deploy appli (scan it)
 vm -> sonar, Nexus, Jenkins, Monitoring
 ```
