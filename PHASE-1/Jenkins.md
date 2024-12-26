@@ -135,7 +135,7 @@ name :jenkins , url : http://jenkins_ip:8080/sonarqube-webhook/
 Nexus => maven-releases and maven-snapshots  -> copy and paste in pom.xml file
 ```
 ```
-Manage Jenkins -> Managed files -> add a new config -> Global Maven settings.xml -> global-settings (ID )
+Manage Jenkins -> Managed files -> add a new config -> Global Maven settings.xml -> global-settings (ID ) -> update the content in with maven-release , maven-snapshot with username and password.
 ```
 ```
 Jenkins Plugins :
