@@ -138,6 +138,9 @@ Nexus => maven-releases and maven-snapshots  -> copy and paste in pom.xml file
 Manage Jenkins -> Managed files -> add a new config -> Global Maven settings.xml -> global-settings (ID ) -> update the content in with maven-release , maven-snapshot with username and password.
 ```
 ```
+add docker credentials in jenkins credentials
+```
+```
 Jenkins Plugins :
 jdk -> Eclipse Termurin installer 
 maven -> config file provider , pipeline maven Integration , maven integration
